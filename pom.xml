@@ -89,7 +89,7 @@
     <dependency>
       <groupId>net.milkbowl.vault</groupId>
       <artifactId>Vault</artifactId>
-      <version>1.2.25-SNAPSHOT</version>
+      <version>1.2.26-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
@@ -105,6 +105,14 @@
         <directory>${basedir}/src/main/resources/</directory>
         <includes>
           <include>plugin.yml</include>
+        </includes>
+      </resource>
+      <resource>
+        <targetPath>resources/</targetPath>
+        <filtering>true</filtering>
+        <directory>${basedir}/src/main/resources/</directory>
+        <includes>
+          <include>config.yml</include>
         </includes>
       </resource>
     </resources>
