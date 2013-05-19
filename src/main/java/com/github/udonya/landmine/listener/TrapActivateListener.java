@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockEvent;
+import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import com.github.udonya.landmine.LandMine;
 import com.github.udonya.landmine.config.entry.TrapsEntry;
@@ -51,12 +53,18 @@ public class TrapActivateListener implements Listener{
         }
         event.getClickedBlock().getWorld().createExplosion(x, y, z, power, setFire, breakBlock);
         event.getClickedBlock().breakNaturally();
-        event.getPlayer().sendMessage(entry.getId().toString());
-        TrapsYaml.getInstance().delTrap(entry.getId());
+        if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());
     }
 
     @EventHandler
     public void onTrapDestroyed(BlockBreakEvent event){
+        removeTrap(event);
+    }
+    @EventHandler
+    public void onTrapFaded(BlockFadeEvent event){
+        removeTrap(event);
+    }
+    private void removeTrap(BlockEvent event){
         TrapsEntry entry = getSameEntry(event.getBlock());
         if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());
     }

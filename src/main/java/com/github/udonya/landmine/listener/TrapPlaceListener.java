@@ -2,6 +2,7 @@ package com.github.udonya.landmine.listener;
 
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -20,6 +21,11 @@ public class TrapPlaceListener implements Listener{
 
     @EventHandler
     public void onTrapPlace(BlockPlaceEvent event){
+        if(!this.plugin.getEnabled().contains(event.getPlayer().getName())) return;
+        if(!event.getPlayer().hasPermission("landmine.enable")){
+            event.getPlayer().sendMessage(ChatColor.RED.toString() + "You don't have permission for set traps.");
+            return;
+        }
         TrapType type = TrapType.getLandMineType(event.getBlock().getType());
         if(type == null) return;
         double x = event.getBlock().getLocation().getX();

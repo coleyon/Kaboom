@@ -9,14 +9,13 @@ dev-url: https://github.com/udonya
 prefix: LandMine
 softdepend: [Vault]
 commands:
-  signfix:
+  landmine:
     aliases: [landmine, lm]
     description:
     usage: This is LandMine's command. See /lm help for more.
-    permission: landmine.user
 permissions:
   landmine.*:
     children:
-      landmine.user: true
-  landmine.user:
+      landmine.enable: true
+  landmine.enable:
     default: op

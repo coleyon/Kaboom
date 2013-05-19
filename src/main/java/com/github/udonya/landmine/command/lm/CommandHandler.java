@@ -7,5 +7,7 @@ public class CommandHandler extends AbstractCommandHandler {
 
     public CommandHandler(LandMine plugin) {
         cmdName = "landmine";
+        providedCmds.add(new ToggleCommand(cmdName, plugin));
+        providedCmds.add(new HelpCommand(cmdName, plugin));
     }
 }

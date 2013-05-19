@@ -27,7 +27,11 @@ public class HelpCommand extends AbstractCommand {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) return true;
-        sender.sendMessage(clrCmd + "How to input text to the sign.");
+        sender.sendMessage(clrCmd + "How to set the trap.");
+        sender.sendMessage(clrCmd + "  Place the block type is wood or stone plate.");
+        sender.sendMessage(clrCmd + "How to toggle Enable/Disable this plugin at each player.");
+        sender.sendMessage(clrCmd + "  ex. /lm toggle");
+        sender.sendMessage(clrCmd + "  Default state is Disabled.");
         return true;
     }
 }
