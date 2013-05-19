@@ -154,7 +154,7 @@ public abstract class AbstractYaml {
         }
     }
 
-    protected String getFileName() {
+    public String getFileName() {
         return yamlRealFileName;
     }
 

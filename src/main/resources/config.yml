@@ -1,0 +1,17 @@
+LandMine:
+  WOOD_PLATE:
+    Damage: 1.5
+    SetFire: false
+    BreakBlock: false
+  IRON_PLATE:
+    Damage: 1.5
+    SetFire: false
+    BreakBlock: false
+  STONE_PLATE:
+    Damage: 1.5
+    SetFire: false
+    BreakBlock: false
+  GOLD_PLATE:
+    Damage: 1.5
+    SetFire: false
+    BreakBlock: false
