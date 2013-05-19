@@ -1,13 +1,12 @@
 package com.github.udonya.landmine.config.access;
 
-import java.util.List;
-import java.util.UUID;
-
+import java.util.Set;
 import com.github.udonya.landmine.config.entry.TrapsEntry;
 
 public interface TrapsAccess {
 
     public void setTrap(TrapsEntry entry);
-    public TrapsEntry getTrap(UUID id);
-    public List<UUID> getIDList();
+    public TrapsEntry getTrap(String id);
+    public Set<String> getIDList();
+    public void delTrap(String id);
 }

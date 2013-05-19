@@ -2,19 +2,12 @@ package com.github.udonya.landmine.config.yaml;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bukkit.Material;
 
 import com.github.udonya.landmine.config.access.ConfigAccess;
 import com.github.udonya.landmine.config.entry.ConfigEntry;
 import com.github.udonya.landmine.definitions.TrapType;
 
-/**
- * config.yml
- *
- * @author mitchy
- *
- */
 public class ConfigYaml extends AbstractYaml implements ConfigAccess {
 
     public static final ConfigYaml INSTANCE = new ConfigYaml();
@@ -37,6 +30,7 @@ public class ConfigYaml extends AbstractYaml implements ConfigAccess {
         config().set(rootPath + DAMAGE, landMine.getDamage());
         config().set(rootPath + SETFIRE, landMine.isSetFire());
         config().set(rootPath + BREAKBLOCK, landMine.isBreakBlock());
+        save();
     }
 
     @Override

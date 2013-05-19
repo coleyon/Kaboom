@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.github.udonya.landmine.config.Yamls;
 import com.github.udonya.landmine.listener.TrapActivateListener;
+import com.github.udonya.landmine.listener.TrapPlaceListener;
 
 public class LandMine extends JavaPlugin{
 
@@ -11,6 +12,7 @@ public class LandMine extends JavaPlugin{
     public void onEnable() {
         super.onEnable();
         enablesConfigures();
+        new TrapPlaceListener(this);
         new TrapActivateListener(this);
     }
 

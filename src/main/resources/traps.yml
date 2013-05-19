@@ -1,0 +1,9 @@
+# Landmine trap definition example
+# LandMine:                                    # Trap type is Landmine.
+#   ac0d6ec0-6763-4144-bc0b-4206d041f05a:      # UUID
+#     World: world                             # World name
+#     X: 188.0                                 # Trap block's x position
+#     Y: 72.0                                  # Trap block's y position
+#     Z: 322.0                                 # Trap block's z position
+#     Owner: udonya                            # Trap block's owner player name
+#     Type: Wood                               # Trap block's block type (wood, stone, iron, gold)

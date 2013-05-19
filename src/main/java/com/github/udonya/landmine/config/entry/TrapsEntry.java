@@ -1,10 +1,9 @@
 package com.github.udonya.landmine.config.entry;
 
-import java.util.UUID;
 import com.github.udonya.landmine.definitions.TrapType;
 
 public class TrapsEntry implements Entry{
-    private UUID id;
+    private String uuid;
     private double x;
     private double y;
     private double z;
@@ -12,13 +11,13 @@ public class TrapsEntry implements Entry{
     private String ownerName;
     private TrapType type;
 
-    public TrapsEntry(double x, double y, double z, String worldName, String playerName, TrapType type) {
-        this.id = UUID.randomUUID();
+    public TrapsEntry(String uuid, double x, double y, double z, String worldName, String ownerName, TrapType type) {
+        this.uuid = uuid;
         this.x = x;
         this.y = y;
         this.z = z;
         this.worldName = worldName;
-        this.ownerName = playerName;
+        this.ownerName = ownerName;
         this.type = type;
     }
 
@@ -58,10 +57,10 @@ public class TrapsEntry implements Entry{
     public void setType(TrapType type) {
         this.type = type;
     }
-    public UUID getId() {
-        return id;
+    public String getId() {
+        return uuid;
     }
-    public void setId(UUID id) {
-        this.id = id;
+    public void setId(String id) {
+        this.uuid = id;
     }
 }
