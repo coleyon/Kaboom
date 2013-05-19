@@ -1,3 +1,10 @@
+# Landmine config example
+# LandMine:                   # Landmine type trap's definition.
+#   WOOD_PLATE:               # Trap's block type (WOOD_PLATE or STONE_PLATE).
+#     Damage: 3.0             # The power of explosion, where 4.0 is TNT.
+#     SetFire: false          # Whether or not to set blocks on fire.
+#     BreakBlock: false       # Whether or not to have blocks be destroyed.
+
 LandMine:
   WOOD_PLATE:
     Damage: 3.0
