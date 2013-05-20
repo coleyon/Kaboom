@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.udonya.LandMine</groupId>
   <artifactId>LandMine</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>LandMine</name>
-  <description></description>
+  <description>The LandMine plugin provides some traps for PvP and fun.</description>
   <url>https://github.com/udonya/LandMine</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

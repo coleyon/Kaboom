@@ -1,9 +1,9 @@
 name: LandMine
 main: com.github.udonya.landmine.LandMine
-version: 0.0.1
+version: 0.1.0
 authors:
   - udonya
-description:
+description: The LandMine plugin provides some traps for PvP and fun.
 website: http://dev.bukkit.org/server-mods/landmine/
 dev-url: https://github.com/udonya
 prefix: LandMine
