@@ -1,20 +1,18 @@
 package com.github.udonya.landmine.listener;
 
-import java.util.List;
 import java.util.Set;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
-import org.bukkit.block.PistonMoveReaction;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockEvent;
-import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.block.BlockPhysicsEvent;
-import org.bukkit.event.block.BlockPistonEvent;
 import org.bukkit.event.block.BlockPistonExtendEvent;
-import org.bukkit.event.block.BlockSpreadEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import com.github.udonya.landmine.LandMine;
 import com.github.udonya.landmine.config.entry.TrapsEntry;
@@ -31,7 +29,7 @@ public class TrapActivateListener implements Listener{
     }
 
     @EventHandler
-    public void onPlayerDroppedOnPlate(PlayerInteractEvent event){
+    public void onPlayerTrappedLandMine(PlayerInteractEvent event){
         if(!event.getAction().equals(Action.PHYSICAL)) return;
         TrapsEntry entry = getSameEntry(event.getClickedBlock());
         if(entry == null) return;
@@ -60,16 +58,22 @@ public class TrapActivateListener implements Listener{
         event.getClickedBlock().getWorld().createExplosion(x, y, z, power, setFire, breakBlock);
         event.getClickedBlock().breakNaturally();
         if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());
+        String owner = entry.getOwnerName();
+        if(this.plugin.getServer().getPlayer(owner) == null) return;
+        if(!this.plugin.getServer().getPlayerExact(owner).isOnline()) return;
+        this.plugin.getServer().getPlayerExact(owner).sendMessage(ChatColor.GOLD.toString() + "KaBooom!! " + event.getPlayer().getName() + " trapped your landmine!");
     }
 
     @EventHandler
     public void onTrapDestroyed(BlockBreakEvent event){
         removeTrap(event);
     }
+
     @EventHandler
     public void onTrapPhysics(BlockPhysicsEvent event){
         removeTrap(event);
     }
+
     @EventHandler
     public void onTrapPistonExtend(BlockPistonExtendEvent event){
         TrapsEntry entry;
@@ -79,13 +83,13 @@ public class TrapActivateListener implements Listener{
             TrapsYaml.getInstance().delTrap(entry.getId());
             return;
         }
-
         // relative push
         for (Block block : event.getBlocks()) {
             entry = getSameEntry(block.getRelative(event.getDirection()));
             if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());
         }
     }
+
     private void removeTrap(BlockEvent event){
         TrapsEntry entry = getSameEntry(event.getBlock());
         if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());

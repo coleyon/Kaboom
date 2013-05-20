@@ -34,5 +34,6 @@ public class TrapPlaceListener implements Listener{
         String worldName = event.getBlock().getLocation().getWorld().getName();
         String ownerName = event.getPlayer().getName();
         TrapsYaml.getInstance().setTrap(new TrapsEntry(UUID.randomUUID().toString(), x, y, z, worldName, ownerName, type));
+        event.getPlayer().sendMessage(ChatColor.DARK_GREEN.toString() + "Your trap was activated!");
     }
 }
