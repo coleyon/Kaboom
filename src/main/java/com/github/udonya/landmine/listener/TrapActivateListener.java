@@ -1,14 +1,20 @@
 package com.github.udonya.landmine.listener;
 
+import java.util.List;
 import java.util.Set;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
+import org.bukkit.block.PistonMoveReaction;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockEvent;
 import org.bukkit.event.block.BlockFadeEvent;
+import org.bukkit.event.block.BlockPhysicsEvent;
+import org.bukkit.event.block.BlockPistonEvent;
+import org.bukkit.event.block.BlockPistonExtendEvent;
+import org.bukkit.event.block.BlockSpreadEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import com.github.udonya.landmine.LandMine;
 import com.github.udonya.landmine.config.entry.TrapsEntry;
@@ -61,8 +67,24 @@ public class TrapActivateListener implements Listener{
         removeTrap(event);
     }
     @EventHandler
-    public void onTrapFaded(BlockFadeEvent event){
+    public void onTrapPhysics(BlockPhysicsEvent event){
         removeTrap(event);
+    }
+    @EventHandler
+    public void onTrapPistonExtend(BlockPistonExtendEvent event){
+        TrapsEntry entry;
+        // direct push
+        entry = getSameEntry(event.getBlock().getRelative(event.getDirection(), 1));
+        if(entry != null){
+            TrapsYaml.getInstance().delTrap(entry.getId());
+            return;
+        }
+
+        // relative push
+        for (Block block : event.getBlocks()) {
+            entry = getSameEntry(block.getRelative(event.getDirection()));
+            if(entry != null) TrapsYaml.getInstance().delTrap(entry.getId());
+        }
     }
     private void removeTrap(BlockEvent event){
         TrapsEntry entry = getSameEntry(event.getBlock());
