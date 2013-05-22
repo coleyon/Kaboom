@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.definitions;
+package com.github.udonya.kaboom.definitions;
 
 import org.bukkit.Material;
 

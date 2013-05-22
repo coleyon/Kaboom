@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.config.yaml;
+package com.github.udonya.kaboom.config.yaml;
 
 import java.io.File;
 import java.io.FileNotFoundException;

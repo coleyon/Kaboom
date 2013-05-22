@@ -1,6 +1,6 @@
-package com.github.udonya.landmine.config.entry;
+package com.github.udonya.kaboom.config.entry;
 
-import com.github.udonya.landmine.definitions.TrapType;
+import com.github.udonya.kaboom.definitions.TrapType;
 
 public class TrapsEntry implements Entry{
     private String uuid;

@@ -1,12 +1,12 @@
-package com.github.udonya.landmine.config.yaml;
+package com.github.udonya.kaboom.config.yaml;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.bukkit.Material;
 
-import com.github.udonya.landmine.config.access.ConfigAccess;
-import com.github.udonya.landmine.config.entry.ConfigEntry;
-import com.github.udonya.landmine.definitions.TrapType;
+import com.github.udonya.kaboom.config.access.ConfigAccess;
+import com.github.udonya.kaboom.config.entry.ConfigEntry;
+import com.github.udonya.kaboom.definitions.TrapType;
 
 public class ConfigYaml extends AbstractYaml implements ConfigAccess {
 

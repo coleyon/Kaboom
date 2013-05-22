@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.listener;
+package com.github.udonya.kaboom.listener;
 
 import java.util.Set;
 import org.bukkit.ChatColor;
@@ -12,16 +12,17 @@ import org.bukkit.event.block.BlockEvent;
 import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.block.BlockPistonExtendEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import com.github.udonya.landmine.LandMine;
-import com.github.udonya.landmine.config.entry.TrapsEntry;
-import com.github.udonya.landmine.config.yaml.ConfigYaml;
-import com.github.udonya.landmine.config.yaml.TrapsYaml;
-import com.github.udonya.landmine.definitions.TrapType;
+
+import com.github.udonya.kaboom.Kaboom;
+import com.github.udonya.kaboom.config.entry.TrapsEntry;
+import com.github.udonya.kaboom.config.yaml.ConfigYaml;
+import com.github.udonya.kaboom.config.yaml.TrapsYaml;
+import com.github.udonya.kaboom.definitions.TrapType;
 
 public class TrapActivateListener implements Listener{
-    private final LandMine plugin;
+    private final Kaboom plugin;
 
-    public TrapActivateListener(LandMine plugin) {
+    public TrapActivateListener(Kaboom plugin) {
         this.plugin = plugin;
         this.plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }

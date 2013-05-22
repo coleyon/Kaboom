@@ -1,16 +1,16 @@
-package com.github.udonya.landmine;
+package com.github.udonya.kaboom;
 
 import java.util.HashSet;
 import java.util.Set;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.udonya.landmine.command.AbstractCommandHandler;
-import com.github.udonya.landmine.command.lm.CommandHandler;
-import com.github.udonya.landmine.config.Yamls;
-import com.github.udonya.landmine.listener.TrapActivateListener;
-import com.github.udonya.landmine.listener.TrapPlaceListener;
+import com.github.udonya.kaboom.command.AbstractCommandHandler;
+import com.github.udonya.kaboom.command.kb.CommandHandler;
+import com.github.udonya.kaboom.config.Yamls;
+import com.github.udonya.kaboom.listener.TrapActivateListener;
+import com.github.udonya.kaboom.listener.TrapPlaceListener;
 
-public class LandMine extends JavaPlugin{
+public class Kaboom extends JavaPlugin{
 
     /**
      * Each player's plugin function enabled status.

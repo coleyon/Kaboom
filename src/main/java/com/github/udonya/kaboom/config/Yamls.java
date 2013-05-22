@@ -1,8 +1,8 @@
-package com.github.udonya.landmine.config;
+package com.github.udonya.kaboom.config;
 
-import com.github.udonya.landmine.config.yaml.AbstractYaml;
-import com.github.udonya.landmine.config.yaml.ConfigYaml;
-import com.github.udonya.landmine.config.yaml.TrapsYaml;
+import com.github.udonya.kaboom.config.yaml.AbstractYaml;
+import com.github.udonya.kaboom.config.yaml.ConfigYaml;
+import com.github.udonya.kaboom.config.yaml.TrapsYaml;
 
 /**
  * YAML形式のコンフィグファイル

@@ -1,7 +1,8 @@
-package com.github.udonya.landmine.config.access;
+package com.github.udonya.kaboom.config.access;
 
 import java.util.Set;
-import com.github.udonya.landmine.config.entry.TrapsEntry;
+
+import com.github.udonya.kaboom.config.entry.TrapsEntry;
 
 public interface TrapsAccess {
 

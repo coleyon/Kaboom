@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.command;
+package com.github.udonya.kaboom.command;
 
 import java.util.ArrayList;
 import java.util.List;

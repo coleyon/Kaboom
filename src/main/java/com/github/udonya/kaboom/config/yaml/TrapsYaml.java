@@ -1,11 +1,11 @@
-package com.github.udonya.landmine.config.yaml;
+package com.github.udonya.kaboom.config.yaml;
 
 import java.util.Set;
 import org.bukkit.Material;
 
-import com.github.udonya.landmine.config.access.TrapsAccess;
-import com.github.udonya.landmine.config.entry.TrapsEntry;
-import com.github.udonya.landmine.definitions.TrapType;
+import com.github.udonya.kaboom.config.access.TrapsAccess;
+import com.github.udonya.kaboom.config.entry.TrapsEntry;
+import com.github.udonya.kaboom.definitions.TrapType;
 
 public class TrapsYaml extends AbstractYaml implements TrapsAccess{
     public static final TrapsYaml INSTANCE = new TrapsYaml();

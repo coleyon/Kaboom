@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.command;
+package com.github.udonya.kaboom.command;
 
 /**
  * Owner of commands

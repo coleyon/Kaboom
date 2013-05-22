@@ -3,12 +3,12 @@
     <maven>2.0.6</maven>
   </prerequisites>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.udonya.LandMine</groupId>
-  <artifactId>LandMine</artifactId>
+  <groupId>com.udonya.Kaboom</groupId>
+  <artifactId>Kaboom</artifactId>
   <version>0.1.0-SNAPSHOT</version>
-  <name>LandMine</name>
-  <description>The LandMine plugin provides some traps for PvP and fun.</description>
-  <url>https://github.com/udonya/LandMine</url>
+  <name>Kaboom</name>
+  <description>The Kaboom plugin provides some traps for PvP and fun.</description>
+  <url>https://github.com/udonya/Kaboom</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -24,19 +24,19 @@
   </licenses>
   <!-- SCM -->
   <scm>
-    <connection>scm:git:git://github.com/udonya/LandMine.git</connection>
-    <developerConnection>scm:git:git@github.com:udonya/LandMine.git</developerConnection>
+    <connection>scm:git:git://github.com/udonya/Kaboom.git</connection>
+    <developerConnection>scm:git:git@github.com:udonya/Kaboom.git</developerConnection>
     <tag>master</tag>
-    <url>https://github.com/udonya/LandMine/tree/master</url>
+    <url>https://github.com/udonya/Kaboom/tree/master</url>
   </scm>
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/udonya/LandMine/issues</url>
+    <url>https://github.com/udonya/Kaboom/issues</url>
   </issueManagement>
   <!-- CI Settings -->
   <ciManagement>
     <system>jenkins</system>
-    <url>http://udonya.dip.jp/jenkins/job/LandMine/</url>
+    <url>http://udonya.dip.jp/jenkins/job/Kaboom/</url>
   </ciManagement>
   <!-- Repositories -->
   <repositories>
@@ -146,7 +146,7 @@
             <manifestEntries>
               <Build-Timestamp>${maven.build.timestamp.format}</Build-Timestamp>
               <Extension-Name>${project.name}</Extension-Name>
-              <Class-Path>LandMine/LandMine.jar</Class-Path>
+              <Class-Path>Kaboom/Kaboom.jar</Class-Path>
             </manifestEntries>
           </archive>
           <!--

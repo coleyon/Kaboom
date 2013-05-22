@@ -1,10 +1,10 @@
-package com.github.udonya.landmine.command;
+package com.github.udonya.kaboom.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import com.github.udonya.landmine.LandMine;
+import com.github.udonya.kaboom.Kaboom;
 
 /**
  * 抽象コマンド
@@ -22,14 +22,14 @@ public abstract class AbstractCommand extends Command {
      */
     protected CmdOwner owner;
 
-    protected final LandMine plugin;
+    protected final Kaboom plugin;
 
     /**
      * コンストラクタ
      *
      * @param name
      */
-    public AbstractCommand(String name, LandMine plugin) {
+    public AbstractCommand(String name, Kaboom plugin) {
         super(name);
         this.plugin = plugin;
     }

@@ -1,21 +1,20 @@
-name: LandMine
-main: com.github.udonya.landmine.LandMine
-version: 0.1.0
+name: Kaboom
+main: com.github.udonya.kaboom.Kaboom
+version: 0.1.1
 authors:
   - udonya
-description: The LandMine plugin provides some traps for PvP and fun.
-website: http://dev.bukkit.org/server-mods/landmine/
+description: The Kaboom plugin provides some traps for PvP and fun.
+website: http://dev.bukkit.org/server-mods/land-mine/
 dev-url: https://github.com/udonya
-prefix: LandMine
-softdepend: [Vault]
+prefix: Kaboom
 commands:
-  landmine:
-    aliases: [landmine, lm]
+  kaboom:
+    aliases: [kaboom, kb]
     description:
-    usage: This is LandMine's command. See /lm help for more.
+    usage: This is Kaboom's command. See /kb help for more.
 permissions:
-  landmine.*:
+  kaboom.*:
     children:
-      landmine.enable: true
-  landmine.enable:
+      kaboom.enable: true
+  kaboom.enable:
     default: op

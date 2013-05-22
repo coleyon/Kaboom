@@ -1,4 +1,4 @@
-package com.github.udonya.landmine.listener;
+package com.github.udonya.kaboom.listener;
 
 import java.util.UUID;
 
@@ -6,15 +6,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import com.github.udonya.landmine.LandMine;
-import com.github.udonya.landmine.config.entry.TrapsEntry;
-import com.github.udonya.landmine.config.yaml.TrapsYaml;
-import com.github.udonya.landmine.definitions.TrapType;
+
+import com.github.udonya.kaboom.Kaboom;
+import com.github.udonya.kaboom.config.entry.TrapsEntry;
+import com.github.udonya.kaboom.config.yaml.TrapsYaml;
+import com.github.udonya.kaboom.definitions.TrapType;
 
 public class TrapPlaceListener implements Listener{
-    private final LandMine plugin;
+    private final Kaboom plugin;
 
-    public TrapPlaceListener(LandMine plugin) {
+    public TrapPlaceListener(Kaboom plugin) {
         this.plugin = plugin;
         this.plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
@@ -22,7 +23,7 @@ public class TrapPlaceListener implements Listener{
     @EventHandler
     public void onTrapPlace(BlockPlaceEvent event){
         if(!this.plugin.getEnabled().contains(event.getPlayer().getName())) return;
-        if(!event.getPlayer().hasPermission("landmine.enable")){
+        if(!event.getPlayer().hasPermission("kaboom.enable")){
             event.getPlayer().sendMessage(ChatColor.RED.toString() + "You don't have permission for set traps.");
             return;
         }

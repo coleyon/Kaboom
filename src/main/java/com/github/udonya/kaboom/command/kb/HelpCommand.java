@@ -1,19 +1,20 @@
-package com.github.udonya.landmine.command.lm;
+package com.github.udonya.kaboom.command.kb;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import com.github.udonya.landmine.LandMine;
-import com.github.udonya.landmine.command.AbstractCommand;
-import com.github.udonya.landmine.command.CmdOwner;
+
+import com.github.udonya.kaboom.Kaboom;
+import com.github.udonya.kaboom.command.AbstractCommand;
+import com.github.udonya.kaboom.command.CmdOwner;
 
 public class HelpCommand extends AbstractCommand {
 
-    public HelpCommand(String name, LandMine plugin) {
+    public HelpCommand(String name, Kaboom plugin) {
         super(name, plugin);
         owner = CmdOwner.valueOf(true, true);
         setDescription("Help command");
-        setUsage("/lm help");
+        setUsage("/kb help");
     }
 
     @Override
@@ -30,7 +31,7 @@ public class HelpCommand extends AbstractCommand {
         sender.sendMessage(clrCmd + "How to set the trap.");
         sender.sendMessage(clrCmd + "  Place the block type is wood or stone plate.");
         sender.sendMessage(clrCmd + "How to toggle Enable/Disable this plugin at each player.");
-        sender.sendMessage(clrCmd + "  ex. /lm toggle");
+        sender.sendMessage(clrCmd + "  ex. /kb toggle");
         sender.sendMessage(clrCmd + "  Default state is Disabled.");
         return true;
     }
