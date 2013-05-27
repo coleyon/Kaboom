@@ -7,7 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.github.udonya.kaboom.command.AbstractCommandHandler;
 import com.github.udonya.kaboom.command.kb.CommandHandler;
 import com.github.udonya.kaboom.config.Yamls;
-import com.github.udonya.kaboom.listener.TrapActivateListener;
+import com.github.udonya.kaboom.listener.TrapActivateByEntityListener;
+import com.github.udonya.kaboom.listener.TrapActivateByPlayerListener;
 import com.github.udonya.kaboom.listener.TrapPlaceListener;
 
 public class Kaboom extends JavaPlugin{
@@ -25,7 +26,8 @@ public class Kaboom extends JavaPlugin{
         enabled = new HashSet<String>();
         enablesConfigures();
         new TrapPlaceListener(this);
-        new TrapActivateListener(this);
+        new TrapActivateByPlayerListener(this);
+        new TrapActivateByEntityListener(this);
         // register commands
         this.cmdExecutor = new CommandHandler(this);
         getCommand(this.cmdExecutor.getCmdName()).setExecutor(this.cmdExecutor);

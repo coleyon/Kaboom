@@ -14,3 +14,11 @@ LandMine:
     Damage: 3.0
     SetFire: true
     BreakBlock: true
+  IRON_PLATE:
+    Damage: 7.0
+    SetFire: false
+    BreakBlock: false
+  GOLD_PLATE:
+    Damage: 10.0
+    SetFire: true
+    BreakBlock: true

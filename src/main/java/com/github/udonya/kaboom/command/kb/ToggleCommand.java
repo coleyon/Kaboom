@@ -1,10 +1,8 @@
 package com.github.udonya.kaboom.command.kb;
 
-import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 import com.github.udonya.kaboom.Kaboom;
 import com.github.udonya.kaboom.command.AbstractCommand;
 import com.github.udonya.kaboom.command.CmdOwner;
@@ -30,10 +28,6 @@ public class ToggleCommand extends AbstractCommand {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) return true;
-        if(!sender.hasPermission("kaboom.enable")) {
-            sender.sendMessage(Color.RED + "You don't have permission!");
-            return true;
-        }
         boolean isSuccess;
         if (this.plugin.getEnabled().contains(sender.getName())){
             isSuccess = this.plugin.getEnabled().remove(sender.getName());
