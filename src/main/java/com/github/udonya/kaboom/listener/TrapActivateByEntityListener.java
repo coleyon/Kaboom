@@ -4,6 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.entity.EntityInteractEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import com.github.udonya.kaboom.Kaboom;
 import com.github.udonya.kaboom.lib.CommonLogics;
 
@@ -13,6 +14,11 @@ public class TrapActivateByEntityListener implements Listener{
     public TrapActivateByEntityListener(Kaboom plugin) {
         this.plugin = plugin;
         this.plugin.getServer().getPluginManager().registerEvents(this, plugin);
+    }
+
+    @EventHandler
+    public void onProjectileHit(ProjectileHitEvent event){
+        CommonLogics.explodeLandMine(event.getEntity().getLocation().getBlock(), event.getEntity().toString());
     }
 
     @EventHandler
