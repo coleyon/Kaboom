@@ -1,6 +1,6 @@
 name: Kaboom
 main: com.github.udonya.kaboom.Kaboom
-version: 0.1.1
+version: 1.0.0
 authors:
   - udonya
 description: The Kaboom plugin provides some traps for PvP and fun.
