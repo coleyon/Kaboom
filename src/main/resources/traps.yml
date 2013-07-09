@@ -6,4 +6,4 @@
 #     Y: 72.0                                  # Trap block's y position
 #     Z: 322.0                                 # Trap block's z position
 #     Owner: udonya                            # Trap block's owner player name
-#     Type: WOOD_PLATE                         # Trap block's block name (WOOD_PLATE, STONE_PLATE)
+#     Type: WOOD_PLATE                         # Trap block's block name (WOOD_PLATE, STONE_PLATE, IRON_PLATE, GOLD_PLATE)

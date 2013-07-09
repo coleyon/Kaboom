@@ -1,5 +1,6 @@
 package com.github.udonya.kaboom.listener;
 
+import org.bukkit.entity.Arrow;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPhysicsEvent;
@@ -18,7 +19,14 @@ public class TrapActivateByEntityListener implements Listener{
 
     @EventHandler
     public void onProjectileHit(ProjectileHitEvent event){
-        CommonLogics.explodeLandMine(event.getEntity().getLocation().getBlock(), event.getEntity().toString());
+        if(event.getEntity() instanceof Arrow){
+            CommonLogics.explodeLandMine(
+                    ((Arrow)event.getEntity()).getLocation().getBlock(),
+                    ((Arrow)event.getEntity()).getShooter().getType().getName()
+            );
+        }else{
+            CommonLogics.explodeLandMine(event.getEntity().getLocation().getBlock(), event.getEntity().toString());
+        }
     }
 
     @EventHandler
