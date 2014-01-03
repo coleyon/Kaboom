@@ -44,10 +44,6 @@
       <id>bukkit-repo</id>
       <url>http://repo.bukkit.org/content/groups/public</url>
     </repository>
-    <repository>
-      <id>vault-repo</id>
-      <url>http://ci.herocraftonline.com/plugin/repository/everything</url>
-    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
@@ -86,11 +82,6 @@
       <scope>test</scope>
     </dependency>
     -->
-    <dependency>
-      <groupId>net.milkbowl.vault</groupId>
-      <artifactId>Vault</artifactId>
-      <version>1.2.26-SNAPSHOT</version>
-    </dependency>
   </dependencies>
 
   <!-- Build Settigs -->
@@ -172,7 +163,7 @@
         </configuration>
       </plugin>
       -->
-      <!-- http://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html
+      <!-- http://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html      -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -193,7 +184,7 @@
           </execution>
         </executions>
       </plugin>
-      -->
+
     </plugins>
   </build>
   <reporting>
